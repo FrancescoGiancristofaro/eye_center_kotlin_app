@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:icon="@drawable/ic_user"
+    >
+    <item
+        android:id="@+id/userProfile"
+        android:orderInCategory="100"
+        android:title="Profilo"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/userAppointment"
+        android:orderInCategory="100"
+        android:title="Le mie prenotazioni"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:title="Logout"
+        app:showAsAction="never"
+        />
+
+</menu>

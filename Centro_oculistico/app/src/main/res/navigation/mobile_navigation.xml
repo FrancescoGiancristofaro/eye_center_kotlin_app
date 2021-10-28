@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.centro_oculistico.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_bookAppointmentFragment"
+            app:destination="@id/bookAppointmentFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.centro_oculistico.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery"
+        >
+        <action
+            android:id="@+id/action_nav_gallery_to_doctorCalendarFragment"
+            app:destination="@id/doctorCalendarFragment" />
+        <action
+            android:id="@+id/action_nav_gallery_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.centro_oculistico.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorCalendarFragment"
+        android:name="com.example.centro_oculistico.DoctorCalendarFragment"
+        android:label="Orari Dr.{doctorName}"
+        tools:layout="@layout/fragment_doctor_calendar">
+        <argument
+            android:name="doctorId"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="doctorName"
+            app:argType="string"
+            android:defaultValue=""/>
+        <action
+            android:id="@+id/action_doctorCalendarFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.centro_oculistico.ui.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_nav_home"
+            app:popUpTo="@+id/loginFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookAppointmentFragment"
+        android:name="com.example.centro_oculistico.ui.home.BookAppointmentFragment"
+        android:label="Prenota ora"
+        tools:layout="@layout/fragment_book_appointment" >
+        <action
+            android:id="@+id/action_bookAppointmentFragment_to_userAppointment"
+            app:destination="@id/userAppointment"
+            app:popUpTo="@+id/bookAppointmentFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_bookAppointmentFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.centro_oculistico.ui.signin.SignInFragment"
+        android:label="Sign in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@+id/signInFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/userAppointment"
+        android:name="com.example.centro_oculistico.ui.slideshow.UserAppointment"
+        android:label="Le mie prenotazioni"
+        tools:layout="@layout/fragment_user_appointment" >
+
+        <action
+            android:id="@+id/action_userAppointment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <dialog
+        android:id="@+id/updateAppointmentDialog"
+        android:name="com.example.centro_oculistico.UpdateAppointmentDialog"
+        android:label="UpdateAppointmentDialog" >
+        <action
+            android:id="@+id/action_updateAppointmentDialog_to_userAppointment"
+            app:destination="@id/userAppointment" />
+    </dialog>
+    <fragment
+        android:id="@+id/userProfile"
+        android:name="com.example.centro_oculistico.ui.slideshow.UserProfile"
+        android:label="Il tuo profilo"
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_userProfile_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorAppointment"
+        android:name="com.example.centro_oculistico.DoctorAppointment"
+        android:label="Calendario appuntamenti"
+        tools:layout="@layout/fragment_doctor_appointment" >
+        <action
+            android:id="@+id/action_doctorAppointment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorProfile"
+        android:name="com.example.centro_oculistico.DoctorProfile"
+        android:label="Profilo"
+        tools:layout="@layout/fragment_doctor_profile" >
+        <action
+            android:id="@+id/action_doctorProfile_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctorTimeSlot"
+        android:name="com.example.centro_oculistico.DoctorTimeSlot"
+        android:label="Fascie Orarie"
+        tools:layout="@layout/fragment_doctor_time_slot" >
+        <action
+            android:id="@+id/action_doctorTimeSlot_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+</navigation>

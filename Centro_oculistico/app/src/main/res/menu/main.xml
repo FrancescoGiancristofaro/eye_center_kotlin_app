@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:icon="@drawable/enter"
+    >
+    <item
+        android:id="@+id/loginFragment"
+        android:orderInCategory="100"
+        android:title="Login"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/signInFragment"
+        android:orderInCategory="100"
+        android:title="Sign in"
+        app:showAsAction="never" />
+</menu>
